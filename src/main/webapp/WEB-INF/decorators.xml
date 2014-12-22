@@ -1,0 +1,19 @@
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/40*.jsp</pattern>
+        <pattern>/*ajax=true*</pattern>
+        <pattern>/struts/*</pattern>
+        <pattern>/resources/*</pattern>
+        <pattern>/static/*</pattern>
+        <pattern>/sign*</pattern>
+        <pattern>/login*</pattern>
+    </excludes> 
+    <!--<decorator name="default" page="default.jsp">
+        <pattern>/*</pattern>
+    </decorator>-->
+
+    <decorator name="awesome" page="layouts/awesome.jsp">
+        <pattern>/category*</pattern>
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>
