@@ -31,6 +31,9 @@
     <!-- App -->
     <script src="${ctx}/static/awesome/js/app.js"></script>
     <script src="${ctx}/static/awesome/js/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- parsley -->
+    <script src="${ctx}/static/awesome/js/parsley/parsley.min.js"></script>
+    <script src="${ctx}/static/awesome/js/parsley/parsley.extend.js"></script>
     <script src="${ctx}/static/awesome/js/app.plugin.js"></script>
     <script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
@@ -39,7 +42,7 @@
 </head>
 <body class="">
 <section class="vbox">
-    <%@ include file="/layouts/header.jsp" %>
+    <%@ include file="/decorators/layouts/header.jsp" %>
     <section>
         <section class="hbox stretch">
             <!-- .aside -->
@@ -48,10 +51,10 @@
                     <section class="w-f-md scrollable">
                         <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0"
                              data-size="10px" data-railOpacity="0.2">
-                            <%@ include file="/layouts/nav.jsp" %>
+                            <%@ include file="/decorators/layouts/nav.jsp" %>
                         </div>
                     </section>
-                    <%@ include file="/layouts/footer.jsp" %>
+                    <%@ include file="/decorators/layouts/footer.jsp" %>
                 </section>
             </aside>
             <!-- /.aside -->

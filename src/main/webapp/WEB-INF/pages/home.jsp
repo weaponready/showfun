@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Weekend|Studio</title>
+    <title>周末摄影</title>
     <link href="${ctx}/styles/camera.css" rel="stylesheet" type="text/css"/>
     <script src="${ctx}/static/camera/jquery.mobile.customized.min.js"></script>
     <script src="${ctx}/static/camera/jquery.easing.1.3.js"></script>
@@ -44,7 +44,7 @@
 <div class="row">
 <div class="col-lg-2"></div>
 <div class="col-lg-8">
-<br>
+    <div class="line line-dashed"></div>
 <!-- .crousel slide -->
 <section class="panel panel-default bg-primary">
     <div class="carousel slide auto panel-body" id="c-slide">
@@ -92,14 +92,14 @@
                 <div class="pos-rlt">
                     <div class="item-overlay opacity r r-2x bg-black">
                         <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
+                            <a href="${ctx}/category/wedding"><i class="fa fa-heart i-2x"></i></a>
                         </div>
                     </div>
-                    <a href="video-detail.html"><img src="images/m40.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="${ctx}/category/wedding"><img src="images/m40.jpg" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Tempered Song</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Miaow</a>
+                    <a href="${ctx}/category/wedding" class="text-ellipsis">一生有你</a>
+                    <a href="${ctx}/category/wedding" class="text-ellipsis text-xs text-muted">婚纱>></a>
                 </div>
             </div>
         </div>
@@ -108,14 +108,14 @@
                 <div class="pos-rlt">
                     <div class="item-overlay opacity r r-2x bg-black">
                         <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
+                            <a href="${ctx}/category/portrait"><i class="fa fa-film i-2x"></i></a>
                         </div>
                     </div>
-                    <a href="video-detail.html"><img src="images/m41.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="${ctx}/category/portrait"><img src="images/m41.jpg" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Morbi id neque quam</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Phasellus</a>
+                    <a href="${ctx}/category/portrait" class="text-ellipsis">我就是我</a>
+                    <a href="${ctx}/category/portrait" class="text-ellipsis text-xs text-muted">写真>></a>
                 </div>
             </div>
         </div>
@@ -124,14 +124,14 @@
                 <div class="pos-rlt">
                     <div class="item-overlay opacity r r-2x bg-black">
                         <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
+                            <a href="${ctx}/category/kids"><i class="fa fa-fighter-jet i-2x"></i></a>
                         </div>
                     </div>
-                    <a href="video-detail.html"><img src="images/m42.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="${ctx}/category/kids"><img src="images/m42.jpg" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Aliquam sollicitudin venenatis ipsum</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Malesuada</a>
+                    <a href="${ctx}/category/kids" class="text-ellipsis">萌萌哒</a>
+                    <a href="${ctx}/category/kids" class="text-ellipsis text-xs text-muted">儿童>></a>
                 </div>
             </div>
         </div>
@@ -140,143 +140,39 @@
                 <div class="pos-rlt">
                     <div class="item-overlay opacity r r-2x bg-black">
                         <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
+                            <a href="${ctx}/category/life"><i class="fa fa-coffee i-2x"></i></a>
                         </div>
                     </div>
-                    <a href="video-detail.html"><img src="images/m43.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="${ctx}/category/life"><img src="images/m43.jpg" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Citudin venenatis ipsum ac</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Volutpat</a>
+                    <a href="${ctx}/category/life" class="text-ellipsis">等一个晴天</a>
+                    <a href="${ctx}/category/life" class="text-ellipsis text-xs text-muted">生活>></a>
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m44.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Vestibulum ullamcorper sodales nisi</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Mauris Qiaos</a>
-                </div>
+    </div>
+    <div class="well bg-black b m-t">
+        <div class="row">
+            <div class="col-xs-6">
+                <strong>联系我们</strong>
+                <h4>周末摄影工作室</h4>
+                <p>
+                    福建 莆田 <i class="fa fa-map-marker"></i><br>
+                    约片请私信或者QQ<br>
+                    QQ: 411751009<br>
+                    Email: 411751009@qq.com<br>
+                </p>
             </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m40.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Mauris convallis mauris at</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Neque</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m45.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Sodales nisi nec condimentum</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Augue</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m44.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Nisi nec condimentum</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Miaow</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m43.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Phasellus at ultricies nequ</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Volutpat</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m42.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Quis malesuada augue</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Feugiat</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m41.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Ipsum ac feugiat</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Quam AC</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="item">
-                <div class="pos-rlt">
-                    <div class="item-overlay opacity r r-2x bg-black">
-                        <div class="center text-center m-t-n">
-                            <a href="video-detail.html"><i class="fa fa-play-circle i-2x"></i></a>
-                        </div>
-                    </div>
-                    <a href="video-detail.html"><img src="images/m40.jpg" alt="" class="r r-2x img-full"></a>
-                </div>
-                <div class="padder-v">
-                    <a href="video-detail.html" class="text-ellipsis">Ullamcorper sodales nisi nec condimentu</a>
-                    <a href="video-detail.html" class="text-ellipsis text-xs text-muted">Convallis</a>
-                </div>
+            <div class="col-xs-6">
+                <strong>Contact</strong>
+                <h4>Weekend Studio</h4>
+                <p>
+                    Putian Fujian<br>
+                    Power by <a href="http://www.openfire.me">Jimmy</a><br>
+                    QQ: 315095859<br>
+                    Email: jimmy@xlet.org<br>
+                </p>
             </div>
         </div>
     </div>

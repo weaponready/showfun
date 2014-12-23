@@ -13,7 +13,73 @@
     </style>
 </head>
 <body>
-<div id="container"></div>
+<div class="line line-dashed"></div>
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div class="blog-post">
+            <div class="post-item">
+                <div class="post-media">
+                    <img src="images/m42.jpg" class="img-full">
+                </div>
+                <div class="caption wrapper-lg">
+                    <h2 class="post-title"><a href="#">7 things you need to know about the flat design</a></h2>
+                    <div class="post-sum">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
+                            <br><br>
+                            Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                    </div>
+                    <div class="line line-lg"></div>
+                    <div class="text-muted">
+                        <i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
+                        <i class="fa fa-clock-o icon-muted"></i> Feb 20, 2013
+                        <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 2 comments</a>
+                    </div>
+                </div>
+            </div>
+            <div class="post-item">
+                <div class="caption wrapper-lg">
+                    <h2 class="post-title"><a href="#">Bootstrap 3: What you need to know</a></h2>
+                    <div class="post-sum">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
+                        </p>
+                        <h3>Html5 and CSS3</h3>
+                        <p>
+                            Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                    </div>
+                    <div class="line line-lg"></div>
+                    <div class="text-muted">
+                        <i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
+                        <i class="fa fa-clock-o icon-muted"></i> Feb 15, 2013
+                        <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 4 comments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="m-t-lg m-b">Leave a comment</h4>
+        <form>
+            <div class="form-group pull-in clearfix">
+                <div class="col-sm-6">
+                    <label>Your name</label>
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-sm-6">
+                    <label >Email</label>
+                    <input type="email" class="form-control" placeholder="Enter email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Comment</label>
+                <textarea class="form-control" rows="5" placeholder="Type your comment"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit comment</button>
+            </div>
+        </form>
+    </div>
+
+</div>
 <script type="text/x-handlebars-template" id="waterfall-tpl">
     {{#result}}
     <div class="item">
