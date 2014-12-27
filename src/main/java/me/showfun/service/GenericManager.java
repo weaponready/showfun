@@ -1,7 +1,12 @@
 package me.showfun.service;
 
+import me.showfun.model.PaginatedList;
+import org.apache.lucene.queryParser.ParseException;
+import me.showfun.model.User;
+
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Generic Manager that talks to GenericDao to CRUD POJOs.
@@ -22,6 +27,14 @@ public interface GenericManager<T, PK extends Serializable> {
      * @return List of populated objects
      */
     List<T> getAll();
+
+    /**
+     * Generic method used to get all objects of a particular type in a paginated way.
+     *
+     * @param thePage
+     * @return the asked page
+     */
+    PaginatedList<T> getAll(DateFilter filter, PaginatedList<T> thePage);
 
     /**
      * Generic method to get an object based on class and identifier. An
@@ -67,6 +80,49 @@ public interface GenericManager<T, PK extends Serializable> {
      * @return a list of matched objects
      */
     List<T> search(String searchTerm, Class clazz);
+
+    /**
+     * Generic method to search for an object in a paginated manner.
+     *
+     * @param searchTerm the search term
+     *
+     * @param thePage
+     *            the pagination params and the obtained page
+     * @return a page of matched objects
+     * @throws org.apache.lucene.queryParser.ParseException
+     */
+    PaginatedList<T> search(String searchTerm, DateFilter filter, PaginatedList<T> thePage) throws ParseException;
+
+    /**
+     * Generic method to search for an object in a paginated manner, with optional filtering of specific values in specific fields.
+     *
+     * @param q the search term
+     *
+     * @param thePage
+     *            the pagination params and the obtained page
+     * @param filter a set of fieldName, value pairs for the filtering
+     * @return a page of matched objects
+     * @throws ParseException
+     */
+    PaginatedList<T> search(String q, Map<String, String> filter, PaginatedList<T> thePage) throws ParseException;
+
+    /**
+     * Generic method to search for an object, owned by a User in a paginated manner.
+     *
+     * @param owner
+     * @param searchTerm
+     *            the search term
+     * @param thePage
+     *            the pagination params and the obtained page
+     * @return a page of matched objects
+     * @throws ParseException
+     * @see me.showfun.model.Owned
+     */
+    PaginatedList<T> search(User owner, String searchTerm, DateFilter filter, PaginatedList<T> thePage) throws ParseException;
+
+
+
+
     /**
      * Generic method to regenerate full text index of the persistent class T
      */

@@ -1,6 +1,9 @@
 package me.showfun.model;
 
+import javax.persistence.PostPersist;
+import javax.persistence.PostUpdate;
 import java.io.Serializable;
+import java.util.Date;
 
 
 /**
@@ -32,4 +35,37 @@ public abstract class BaseObject implements Serializable {
      * @return hashCode
      */
     public abstract int hashCode();
+
+    protected Date createAt;
+    protected Date updateAt;
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
+    public Date getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    @PostPersist
+    public void postSave(){
+        Date now = new Date();
+        setCreateAt(now);
+        setUpdateAt(now);
+    }
+
+
+    @PostUpdate
+    public void postUpdate(){
+        setUpdateAt(new Date());
+    }
+
 }

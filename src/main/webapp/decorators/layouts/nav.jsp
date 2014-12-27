@@ -3,27 +3,11 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!-- nav -->
 <nav class="nav-primary hidden-xs">
-    <ul class="nav bg clearfix">
-        <li>
-            <a href="${ctx}/about">
-                <i class="icon-emoticon-smile icon text-info"></i>
-                <span class="font-bold">关于</span>
-            </a>
-        </li>
-        <li>
-            <a href="#modal-form" data-toggle="modal">
-                <i class="icon-bubbles icon text-primary-lter"></i>
-                <span class="font-bold">联系</span>
-            </a>
-        </li>
-
-        <li class="m-b hidden-nav-xs"></li>
-    </ul>
     <ul class="nav" data-ride="collapse">
         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
         </li>
         <li >
-            <a href="#" class="auto">
+            <a href="${ctx}/app/category/all" class="auto">
                         <span class="pull-right text-muted">
                           <i class="fa fa-angle-left text"></i>
                           <i class="fa fa-angle-down text-active"></i>
@@ -64,6 +48,22 @@
             </ul>
         </li>
     </ul>
+    <ul class="nav bg clearfix">
+        <li>
+            <a href="${ctx}/about">
+                <i class="icon-emoticon-smile icon text-info"></i>
+                <span class="font-bold">关于</span>
+            </a>
+        </li>
+        <li>
+            <a href="#modal-form" data-toggle="modal">
+                <i class="icon-bubbles icon text-primary-lter"></i>
+                <span class="font-bold">联系</span>
+            </a>
+        </li>
+
+        <li class="m-b hidden-nav-xs"></li>
+    </ul>
     <div class="modal fade" id="modal-form">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <footer class="panel-footer text-right bg-light">
-                                <div class="btn btn-danger" onclick="javascript:$('#modal-form').modal('');">取消</div>
+                                <div class="btn btn-danger" onclick="javascript:$('#modal-form').modal('hide');">取消</div>
                                 <button type="submit" class="btn btn-success btn-s-xs">提交</button>
                             </footer>
                         </section>
@@ -100,8 +100,5 @@
             </div>
         </div>
     </div>
-    <script>
-
-    </script>
 </nav>
 <!-- / nav -->

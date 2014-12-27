@@ -26,6 +26,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 
 /**
  * This class serves as the Base class for all other DAOs - namely to hold
@@ -50,10 +51,12 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      * Log variable for all child classes. Uses LogFactory.getLog(getClass()) from Commons Logging
      */
     protected final Log log = LogFactory.getLog(getClass());
-    private Class<T> persistentClass;
+    protected Class<T> persistentClass;
+    private HibernateTemplate hibernateTemplate;
     @Resource
     private SessionFactory sessionFactory;
     private Analyzer defaultAnalyzer;
+
 
     /**
      * Constructor that takes in a class to see which type of entity to persist.
@@ -75,6 +78,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     public GenericDaoHibernate(final Class<T> persistentClass, SessionFactory sessionFactory) {
         this.persistentClass = persistentClass;
         this.sessionFactory = sessionFactory;
+        this.hibernateTemplate = new HibernateTemplate(sessionFactory);
         defaultAnalyzer = new StandardAnalyzer(Version.LUCENE_35);
     }
 
@@ -137,9 +141,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      */
     @SuppressWarnings("unchecked")
     public T get(PK id) {
-        Session sess = getSession();
-        IdentifierLoadAccess byId = sess.byId(persistentClass);
-        T entity = (T) byId.load(id);
+        T entity = (T) hibernateTemplate.get(this.persistentClass, id);
 
         if (entity == null) {
             log.warn("Uh oh, '" + this.persistentClass + "' object with id '" + id + "' not found...");

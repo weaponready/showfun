@@ -12,8 +12,8 @@ public class Page<T> {
     private int page;
     private int size;
 
-    private int total;
-    private int totalPages;
+    private int itemCount;
+    private int pageCount;
 
     public List<T> getData() {
         return data;
@@ -39,19 +39,19 @@ public class Page<T> {
         this.size = size;
     }
 
-    public int getTotal() {
-        return total;
+    public int getItemCount() {
+        return itemCount;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setItemCount(int itemCount) {
+        this.itemCount = itemCount;
     }
 
-    public int getTotalPages() {
-        return totalPages;
+    public int getPageCount() {
+        return pageCount;
     }
 
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
     }
 }

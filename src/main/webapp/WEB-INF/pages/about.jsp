@@ -10,6 +10,9 @@
         * {
             box-sizing: content-box !important;
         }
+        .form-control{
+            padding: 0px 0px;
+        }
     </style>
 </head>
 <body>

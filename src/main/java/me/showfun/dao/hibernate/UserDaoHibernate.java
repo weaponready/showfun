@@ -2,9 +2,10 @@ package me.showfun.dao.hibernate;
 
 import me.showfun.dao.UserDao;
 import me.showfun.model.User;
+import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.orm.hibernate4.SessionFactoryUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,10 +14,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Table;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 
 /**
  * This class interacts with Hibernate session to save/delete and
@@ -30,7 +27,7 @@ import org.hibernate.criterion.Restrictions;
  *   Modified by jgarcia (updated to hibernate 4)
 */
 @Repository("userDao")
-public class UserDaoHibernate extends GenericDaoHibernate<User, Long> implements UserDao, UserDetailsService {
+public class UserDaoHibernate extends PaginatedDaoHibernate<User, Long> implements UserDao, UserDetailsService {
 
     /**
      * Constructor that sets the entity to User.class.
@@ -96,4 +93,6 @@ public class UserDaoHibernate extends GenericDaoHibernate<User, Long> implements
         return jdbcTemplate.queryForObject(
                 "select password from " + table.name() + " where id=?", String.class, userId);
     }
+
+
 }

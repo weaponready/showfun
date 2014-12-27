@@ -2,7 +2,10 @@ package me.showfun.model;
 
 import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.search.annotations.DocumentId;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.FieldBridge;
 import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.bridge.builtin.EnumBridge;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -35,7 +38,8 @@ public class Work extends BaseObject {
         this.id = id;
     }
 
-    @Enumerated(EnumType.ORDINAL)
+    @Field(bridge = @FieldBridge(impl = EnumBridge.class))
+    @Enumerated(EnumType.STRING)
     @Column()
     public WorkType getType() {
         return type;

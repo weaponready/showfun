@@ -11,14 +11,14 @@
     <script type="text/javascript">
         $(function () {
             $.ajax({
-                url: '${ctx}/api/v1/work?top=true',
+                url: '${ctx}/api/v1/work/all?top=true',
                 async: false,
                 cache: true,
                 type: 'GET',
                 dataType: 'json',
                 success: function (response) {
                     var photos = '';
-                    $.each(response, function (index, item) {
+                    $.each(response.list, function (index, item) {
                         photos += '<div data-thumb="' + item.cover.url + '" data-src="' + item.cover.url + '"></div>';
                     });
 
@@ -169,9 +169,9 @@
                 <h4>Weekend Studio</h4>
                 <p>
                     Putian Fujian<br>
-                    Power by <a href="http://www.openfire.me">Jimmy</a><br>
-                    QQ: 315095859<br>
-                    Email: jimmy@xlet.org<br>
+                    <small>power by <a href="http://www.openfire.me">Jimmy</a></small><br>
+                    <small>QQ: 315095859</small><br>
+                    <small>Email: jimmy@xlet.org</small><br>
                 </p>
             </div>
         </div>

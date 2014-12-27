@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author <a href="mailto:matt@raibledesigns.com">Matt Raible</a>
  */
-public interface UserDao extends GenericDao<User, Long> {
+public interface UserDao extends PaginatedDao<User, Long> {
 
     /**
      * Gets users information based on login name.

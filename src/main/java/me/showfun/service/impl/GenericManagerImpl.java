@@ -1,14 +1,17 @@
 package me.showfun.service.impl;
 
+import me.showfun.dao.PaginatedDao;
+import me.showfun.model.PaginatedList;
+import me.showfun.service.DateFilter;
+import me.showfun.service.GenericManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import me.showfun.dao.GenericDao;
-import me.showfun.service.GenericManager;
-import org.springframework.beans.factory.annotation.Autowired;
+import me.showfun.model.User;
+import org.apache.lucene.queryParser.ParseException;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class serves as the Base class for all other Managers - namely to hold
@@ -54,13 +57,13 @@ public class GenericManagerImpl<T, PK extends Serializable> implements GenericMa
     /**
      * GenericDao instance, set by constructor of child classes
      */
-    protected GenericDao<T, PK> dao;
+    protected PaginatedDao<T, PK> dao;
 
 
     public GenericManagerImpl() {
     }
 
-    public GenericManagerImpl(GenericDao<T, PK> genericDao) {
+    public GenericManagerImpl(PaginatedDao<T, PK> genericDao) {
         this.dao = genericDao;
     }
 
@@ -70,6 +73,16 @@ public class GenericManagerImpl<T, PK extends Serializable> implements GenericMa
     public List<T> getAll() {
         return dao.getAll();
     }
+
+    public PaginatedList<T> getAll(DateFilter filter, PaginatedList<T> thePage) {
+        return dao.getAll(filter, thePage);
+    }
+
+
+    public PaginatedList<T> getAll(User owner, DateFilter filter, PaginatedList<T> thePage) {
+        return dao.getAll(owner, filter, thePage);
+    }
+
 
     /**
      * {@inheritDoc}
@@ -118,6 +131,30 @@ public class GenericManagerImpl<T, PK extends Serializable> implements GenericMa
         }
 
         return dao.search(q);
+    }
+
+    public PaginatedList<T> search(User owner, String q, DateFilter filter, PaginatedList<T> thePage) throws ParseException {
+        if (q == null || "".equals(q.trim())) {
+            return dao.getAll(owner, filter, thePage);
+        }
+        return dao.search(owner, q, filter, thePage);
+    }
+
+    public PaginatedList<T> search(String q, DateFilter filter, PaginatedList<T> thePage) throws ParseException {
+        if (q == null || "".equals(q.trim())) {
+            return getAll(filter, thePage);
+        }
+        return dao.search(q, filter, thePage);
+    }
+
+    /* (non-Javadoc)
+     * @see es.jogaco.commons.service.GenericManager#search(java.lang.String, java.util.Map es.jogaco.commons.model.PaginatedList)
+     */
+    public PaginatedList<T> search(String q, Map<String, String> filter, PaginatedList<T> thePage) throws ParseException {
+        if (q == null || "".equals(q.trim())) {
+            return getAll(null, thePage);
+        }
+        return dao.search(q, filter, thePage);
     }
 
     /**

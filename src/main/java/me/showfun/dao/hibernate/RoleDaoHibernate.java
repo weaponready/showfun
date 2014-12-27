@@ -2,11 +2,11 @@ package me.showfun.dao.hibernate;
 
 import me.showfun.dao.RoleDao;
 import me.showfun.model.Role;
-import java.util.List;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 /**
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author jgarcia (updated to hibernate 4)
  */
 @Repository
-public class RoleDaoHibernate extends GenericDaoHibernate<Role, Long> implements RoleDao {
+public class RoleDaoHibernate extends PaginatedDaoHibernate<Role, Long> implements RoleDao {
 
     /**
      * Constructor to create a Generics-based version using Role as the entity

@@ -5,6 +5,6 @@ import me.showfun.model.Picture;
 /**
  * Created by Jamy on 14-12-21.
  */
-public interface PictureDao extends GenericDao<Picture, Long> {
+public interface PictureDao extends PaginatedDao<Picture, Long> {
 
 }
