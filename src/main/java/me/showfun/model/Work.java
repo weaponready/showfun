@@ -57,7 +57,7 @@ public class Work extends BaseObject {
         this.memo = memo;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id")
     public User getOwner() {
         return owner;
@@ -67,7 +67,7 @@ public class Work extends BaseObject {
         this.owner = owner;
     }
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cover_id")
     public Picture getCover() {
         return cover;
@@ -79,7 +79,7 @@ public class Work extends BaseObject {
 
     @OneToMany(cascade = {
             CascadeType.ALL
-    }, mappedBy = "work",fetch = FetchType.EAGER)
+    }, mappedBy = "work",fetch = FetchType.LAZY)
     @JsonManagedReference("pictures")
     public Set<Picture> getPictures() {
         return pictures;
@@ -91,7 +91,15 @@ public class Work extends BaseObject {
 
     @Override
     public String toString() {
-        return null;
+        return "Work{" +
+                "id=" + id +
+                ", type=" + type +
+                ", memo='" + memo + '\'' +
+                ", owner=" + owner +
+                ", cover=" + cover +
+                ", pictures=" + pictures +
+                ", publish=" + publish +
+                '}';
     }
 
     @Override

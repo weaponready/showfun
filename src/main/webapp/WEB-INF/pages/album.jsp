@@ -6,6 +6,9 @@
 <head>
     <link rel="stylesheet" href="${ctx}/static/waterfall/css/reset.css">
     <link rel="stylesheet" href="${ctx}/static/waterfall/css/waterfall.css">
+    <link href="${ctx}/styles/camera.css" rel="stylesheet" type="text/css"/>
+    <script src="${ctx}/static/galleria/galleria-1.4.2.min.js"></script>
+    <script src="${ctx}/static/galleria/plugins/history/galleria.history.min.js"></script>
     <style>
         .item {
             box-sizing: content-box !important;
@@ -15,20 +18,27 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-lg-offset-2">
         <div class="line line-dashed"></div>
         <!-- .crousel slide -->
-            <div id="container"></div>
+        <div id="container"></div>
     </div>
+</div>
 <script type="text/x-handlebars-template" id="waterfall-tpl">
     {{#list}}
     <div class="item">
-        <a href="${ctx}/work" data-toggle="ajaxModal">
-            <img src="${ctx}/{{cover.url}}" width="192"/>
+        <a href="/gallery/{{id}}" data-toggle="ajaxModal">
+            <img src="{{cover}}" width="192"/>
         </a>
-        <div class="">
-            {{name}}
+        <div class="split">{{memo}}</div>
+        <div class="split">
+            <a class="btn btn-default btn-sm pull-left" data-toggle="button">
+                <i class="fa fa-heart-o text"></i>
+                <i class="fa fa-heart text-active text-primary"></i>
+            </a>
+            <span class="thumb-sm avatar pull-right m-l-xs">
+                <img src="{{avatar}}" class="dker" style="padding: 5px;" alt="...">
+            </span>
         </div>
     </div>
     {{/list}}
@@ -41,8 +51,8 @@
     $(function () {
         $('#container').waterfall({
             itemCls: 'item',
-            colWidth: 222,
-            gutterWidth: 15,
+            colWidth: 200,
+            gutterWidth: 10,
             gutterHeight: 15,
             checkImagesLoaded: true,
             isAnimated: true,
@@ -56,8 +66,8 @@
             },
             callbacks: {
                 renderData: function (data) {
-                    if(data.pageNumber>=data.totalPages){
-                        $('#container').waterfall('pause', function(){
+                    if (data.pageNumber >= data.totalPages) {
+                        $('#container').waterfall('pause', function () {
                             $('#waterfall-loading').fadeOut();
                             $('#waterfall-message').html('<div class="col-sm-3"></div><div class="col-sm-4"><div class="alert alert-info">\
                                     <button type="button" class="close" data-dismiss="alert">×</button>\
@@ -67,7 +77,7 @@
                     var template = $('#waterfall-tpl').html();
                     return Mustache.to_html(template, data);
                 },
-                loadingFinished: function($loading, isBeyondMaxPage){
+                loadingFinished: function ($loading, isBeyondMaxPage) {
 
                     //alert($loading+':'+isBeyondMaxPage);
                 }

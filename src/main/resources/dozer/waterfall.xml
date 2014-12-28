@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    
+    <mapping map-null="false">
+        <class-a>me.showfun.model.Picture</class-a>
+        <class-b>me.showfun.dto.PictureDTO</class-b>
+        <field>
+            <a>work.id</a>
+            <b>workId</b>
+        </field>
+        <field>
+            <a>name</a>
+            <b>description</b>
+        </field>
+    </mapping>
+
+    <mapping map-null="false">
+        <class-a>me.showfun.model.Work</class-a>
+        <class-b>me.showfun.dto.WaterfallItemDTO</class-b>
+        <field>
+            <a>owner.id</a>
+            <b>ownerId</b>
+        </field>
+        <field>
+            <a>owner.avatar</a>
+            <b>avatar</b>
+        </field>
+        <field>
+            <a>cover.url</a>
+            <b>cover</b>
+        </field>
+        <field>
+            <a>pictures</a>
+            <b>pictures</b>
+            <a-hint>me.showfun.model.Picture</a-hint>
+            <b-hint>me.showfun.dto.PictureDTO</b-hint>
+        </field>
+    </mapping>
+
+</mappings>

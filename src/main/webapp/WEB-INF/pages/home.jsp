@@ -19,7 +19,7 @@
                 success: function (response) {
                     var photos = '';
                     $.each(response.list, function (index, item) {
-                        photos += '<div data-thumb="' + item.cover.url + '" data-src="' + item.cover.url + '"></div>';
+                        photos += '<div data-thumb="' + item.cover + '" data-src="' + item.cover + '"></div>';
                     });
 
                     $('#camera_wrap').append(photos);
@@ -42,8 +42,7 @@
 <body>
 
 <div class="row">
-<div class="col-lg-2"></div>
-<div class="col-lg-8">
+<div class="col-lg-8 col-lg-offset-2">
     <div class="line line-dashed"></div>
 <!-- .crousel slide -->
 <section class="panel panel-default bg-primary">

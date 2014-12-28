@@ -43,6 +43,10 @@ public class PaginatedList<T> {
         this.page = 0;
     }
 
+    public PaginatedList(int page, int size) {
+        this.page = page;
+        this.size = size;
+    }
 
     /**Create <code>PaginatedListImpl</code> instance using the <code>HttpServletRequest</code> object.
      * @param size the page size - the total number of rows per page.

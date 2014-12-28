@@ -1,5 +1,6 @@
 package me.showfun.webapp.controller.rest;
 
+import me.showfun.dto.WaterfallItemDTO;
 import me.showfun.model.PaginatedList;
 import me.showfun.model.Work;
 import me.showfun.model.WorkType;
@@ -16,20 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("api/v1/work")
 @RestController
-public class WorkController extends BaseController{
+public class WorkController extends BaseController {
 
     @Autowired
     private WorkManager workManager;
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public Work add(Work work){
+    public Work add(Work work) {
         return workManager.save(work);
     }
 
-    @RequestMapping(value = "/{type}",method = RequestMethod.GET)
-    public PaginatedList<Work> search(@PathVariable("type") WorkType type, PaginatedList page){
-        return workManager.listByWorkType(type,page);
+    @RequestMapping(value = "/{type}", method = RequestMethod.GET)
+    public PaginatedList<WaterfallItemDTO> search(@PathVariable("type") WorkType type, PaginatedList page) {
+        return workManager.listDTOByWorkType(type, page);
     }
 
 }

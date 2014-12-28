@@ -50,7 +50,7 @@ public class Picture extends BaseObject {
         this.name = name;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "work_id")
     @JsonBackReference(value = "work")
     public Work getWork() {
@@ -79,7 +79,14 @@ public class Picture extends BaseObject {
 
     @Override
     public String toString() {
-        return null;
+        return "Picture{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", name='" + name + '\'' +
+                ", work=" + work == null ? null : work.getId() +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
     }
 
     @Override

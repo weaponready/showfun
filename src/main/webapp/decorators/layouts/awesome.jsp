@@ -37,7 +37,7 @@
     <script src="${ctx}/static/awesome/js/app.plugin.js"></script>
     <script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-    <script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/demo.js"></script>
+    <%--<script type="text/javascript" src="${ctx}/static/awesome/js/jPlayer/demo.js"></script>--%>
     <sitemesh:head/>
 </head>
 <body class="">
@@ -140,8 +140,8 @@
                                             </ul>
                                         </div>
                                         <div class="jp-no-solution hide">
-                                            <span>Update Required</span>
-                                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                                            <span>无法播放:(</span>
+                                            播放多媒体文件需要更新<a href="http://get.adobe.com/flashplayer/" target="_blank">Flash插件</a>.
                                         </div>
                                     </div>
 

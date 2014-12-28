@@ -52,7 +52,6 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      */
     protected final Log log = LogFactory.getLog(getClass());
     protected Class<T> persistentClass;
-    private HibernateTemplate hibernateTemplate;
     @Resource
     private SessionFactory sessionFactory;
     private Analyzer defaultAnalyzer;
@@ -78,7 +77,6 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     public GenericDaoHibernate(final Class<T> persistentClass, SessionFactory sessionFactory) {
         this.persistentClass = persistentClass;
         this.sessionFactory = sessionFactory;
-        this.hibernateTemplate = new HibernateTemplate(sessionFactory);
         defaultAnalyzer = new StandardAnalyzer(Version.LUCENE_35);
     }
 
@@ -141,8 +139,8 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      */
     @SuppressWarnings("unchecked")
     public T get(PK id) {
-        T entity = (T) hibernateTemplate.get(this.persistentClass, id);
-
+        Session sess = getSession();
+        T entity = (T) sess.get(this.persistentClass, id);
         if (entity == null) {
             log.warn("Uh oh, '" + this.persistentClass + "' object with id '" + id + "' not found...");
             throw new ObjectRetrievalFailureException(this.persistentClass, id);

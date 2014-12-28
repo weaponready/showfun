@@ -18,8 +18,7 @@
 <body>
 <div class="line line-dashed"></div>
 <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
+    <div class="col-lg-8 col-lg-offset-2">
         <div class="blog-post">
             <div class="post-item">
                 <div class="post-media">
