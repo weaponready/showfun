@@ -10,5 +10,7 @@
         <mapping class="me.showfun.model.Role"/>
         <mapping class="me.showfun.model.Picture"/>
         <mapping class="me.showfun.model.Work"/>
+        <mapping class="me.showfun.model.Message"/>
+        <mapping class="me.showfun.model.TopX"/>
     </session-factory>
 </hibernate-configuration>

@@ -6,39 +6,12 @@
     <artifactId>weekend</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>AppFuse Spring MVC Application</name>
-    <url>http://www.mycompany.com</url>
+    <name>weekend studio</name>
+    <url>http://www.showfun.me</url>
 
     <prerequisites>
         <maven>3.1.0</maven>
     </prerequisites>
-
-    <!--<licenses>
-        <license>
-            <name></name>
-            <url></url>
-        </license>
-    </licenses>
-
-    <scm>
-        <connection></connection>
-        <developerConnection></developerConnection>
-        <url></url>
-    </scm>
-
-    <issueManagement>
-        <system></system>
-        <url></url>
-    </issueManagement>
-
-    <developers>
-        <developer>
-            <id></id>
-            <name></name>
-            <email></email>
-            <timezone></timezone>
-        </developer>
-    </developers>-->
 
     <build>
         <defaultGoal>install</defaultGoal>
@@ -88,28 +61,28 @@
                         </component>
                     </components>
                     <componentProperties>
-                        <drop>true</drop>
+                        <drop>false</drop>
                         <jdk5>true</jdk5>
                         <propertyfile>${project.build.outputDirectory}/jdbc.properties</propertyfile>
                         <skip>${skipTests}</skip>
                     </componentProperties>
                 </configuration>
                 <!--cause encode problem ?-->
-               <!-- <executions>
+                <!--<executions>
                     <execution>
                         <phase>process-test-resources</phase>
                         <goals>
                             <goal>hbm2ddl</goal>
                         </goals>
                     </execution>
-                </executions>-->
+                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>${jdbc.groupId}</groupId>
                         <artifactId>${jdbc.artifactId}</artifactId>
                         <version>${jdbc.version}</version>
                     </dependency>
-                </dependencies>
+                </dependencies>-->
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -632,6 +605,11 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
             <version>${dozer.version}</version>
@@ -1004,7 +982,7 @@
         <junit.version>4.11</junit.version>
         <servlet.version>3.1.0</servlet.version>
         <wiser.version>1.2</wiser.version>
-
+        <guava.version>16.0.1</guava.version>
         <!-- WebTest default target -->
         <webtest.target>run-all-tests</webtest.target>
 

@@ -15,6 +15,7 @@
     <http pattern="/app/about" security="none"/>
     <http pattern="/app/category/**" security="none"/>
     <http pattern="/app/gallery/**" security="none"/>
+    <http pattern="/app/download/**" security="none"/>
 
     <http auto-config="true">
         <intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/>

@@ -11,15 +11,15 @@
     <script type="text/javascript">
         $(function () {
             $.ajax({
-                url: '${ctx}/api/v1/work/all?top=true',
+                url: '${ctx}/api/v1/topx',
                 async: false,
                 cache: true,
                 type: 'GET',
                 dataType: 'json',
                 success: function (response) {
                     var photos = '';
-                    $.each(response.list, function (index, item) {
-                        photos += '<div data-thumb="' + item.cover + '" data-src="' + item.cover + '"></div>';
+                    $.each(response, function (index, item) {
+                        photos += '<div data-thumb="' + item.url + '" data-src="' + item.url + '"></div>';
                     });
 
                     $('#camera_wrap').append(photos);
